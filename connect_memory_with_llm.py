@@ -17,8 +17,8 @@ def load_llm(huggingface_repo_id):
 
 
 CUSTOM_PROMPT_TEMPLATE = """Use the following pieces of context to answer the question at the end.
-                             If you don't know the answer, say you don't know, don't try to make up an answer.
-                               {context} Question: {question} Answer:"""
+                            If you don't know the answer, say you don't know, don't try to make up an answer.
+                            {context} Question: {question} Answer: """
 
 def set_custom_prompt(custom_prompt_template):
     prompt = PromptTemplate(template = custom_prompt_template , input_variables = ["context", "question"])
@@ -44,4 +44,3 @@ print("Source Documents: ")
 for doc in response["source_documents"]:
     print(doc.metadata['source'])   
 
-                    
